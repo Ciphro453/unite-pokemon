@@ -3,12 +3,12 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className="mb-10 min-w-screen bg-slate-700 h-20 flex items-center shadow-md shadow-black">
+    <div className="mb-10 min-w-screen bg-slate-700 h-20 flex items-center shadow-sm shadow-black">
       <div className="w-[60%] mx-auto flex justify-between items-center">
         <div>
           <Image
             className="h-16 w-auto rounded-md cursor-pointer"
-            src="/icon.png"
+            src="/favicon.ico"
             width={100}
             height={100}
           />
