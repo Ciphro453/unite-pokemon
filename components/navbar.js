@@ -25,7 +25,7 @@ export default function Navbar() {
             href={"/tier-list"}
             className="cursor-pointer text-slate-300 hover:text-white hover:scale-105 duration-300 ease-in-out"
           >
-            Make Your Own Tier List
+            Create Tier List
           </Link>
         </div>
       </div>
