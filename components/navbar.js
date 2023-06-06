@@ -11,13 +11,20 @@ export default function Navbar() {
             src="/favicon.ico"
             width={100}
             height={100}
+            alt="unite logo"
           />
         </div>
         <div className="flex font-large">
-          <Link href={'/'} className="px-10 cursor-pointer text-slate-300 hover:text-white hover:scale-105 duration-300 ease-in-out">
+          <Link
+            href={"/"}
+            className="px-10 cursor-pointer text-slate-300 hover:text-white hover:scale-105 duration-300 ease-in-out"
+          >
             Pokémon
           </Link>
-          <Link href={'/tier-list'} className="cursor-pointer text-slate-300 hover:text-white hover:scale-105 duration-300 ease-in-out">
+          <Link
+            href={"/tier-list"}
+            className="cursor-pointer text-slate-300 hover:text-white hover:scale-105 duration-300 ease-in-out"
+          >
             Make Your Own Tier List
           </Link>
         </div>
