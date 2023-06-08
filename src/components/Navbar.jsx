@@ -1,34 +1,33 @@
-import Image from "next/image";
-import Link from "next/link";
+import logo from "../assets/logo.png";
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <div className="mb-10 min-w-screen bg-slate-700 h-20 flex items-center shadow-sm shadow-black">
       <div className="w-[60%] mx-auto flex justify-between items-center">
         <div>
-          <Image
+          <img
             className="h-16 w-auto rounded-md cursor-pointer"
-            src="/favicon.ico"
-            width={100}
-            height={100}
+            src={logo}
             alt="unite logo"
           />
         </div>
         <div className="flex font-large">
-          <Link
+          <div
             href={"/"}
             className="px-10 cursor-pointer text-slate-300 hover:text-white hover:scale-105 duration-300 ease-in-out"
           >
             Pokémon
-          </Link>
-          <Link
+          </div>
+          <div
             href={"/tier-list"}
             className="cursor-pointer text-slate-300 hover:text-white hover:scale-105 duration-300 ease-in-out"
           >
             Create Tier List
-          </Link>
+          </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Navbar;
