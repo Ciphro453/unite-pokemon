@@ -8,19 +8,47 @@ const Pokemon = ({ props }) => {
   return (
     <div className="min-h-screen min-w-screen">
       <div className="text-white w-[60%] mx-auto bg-slate-800 rounded-md shadow-md shadow-black">
-        <div className="flex flex-col">
-          <img
-            className="mx-6 my-2 h-auto w-48 rounded-md"
-            src={`${pokemon.image}.png`}
-            alt={`${pokemon.name}`}
-          />
-          <h1 className="text-2xl">{pokemon.name}</h1>
+        <div className="flex flex-col items-center justify-center text-center">
+          <div className="">
+            <img
+              className="mx-6 my-2 h-auto w-48 rounded-md"
+              src={`${pokemon.image}.png`}
+              alt={`${pokemon.name}`}
+            />
+            <h1 className="text-2xl">{pokemon.name}</h1>
+            <div className="flex items-center justify-evenly">
+              <p>{pokemon.difficulty}</p>
+              <p>{pokemon.role}</p>
+            </div>
+          </div>
+          <div className="flex">
+            {pokemon.evolution.map((evolution, key) => {
+              if (evolution.level === "")
+                return (
+                  <div className="flex flex-col items-center">
+                    <img
+                      className="bg-slate-700 rounded-md border-slate-800 border-2 shadow-sm shadow-slate-950 w-16 h-auto m-2"
+                      src={`${evolution.image}.png`}
+                    />
+                    <p>{evolution.name}</p>
+                  </div>
+                );
+              return (
+                <div className="flex items-center">
+                  <div className="flex flex-col items-center justify-center">
+                    <img
+                      className="bg-slate-700 rounded-md border-slate-800 border-2 shadow-sm shadow-slate-950 w-16 h-auto m-2"
+                      src={`${evolution.image}.png`}
+                    />
+                    <p>{evolution.name}</p>
+                  </div>
+                  {/* <p>Evolves at {evolution.level}</p> */}
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <div className="flex">
-          <p>{pokemon.difficulty}</p>
-          <p>{pokemon.role}</p>
-        </div>
-        <div>
+        {/* <div>
           <div>
             {pokemon.skills.map((skills, key) => {
               console.log(skills);
@@ -66,7 +94,7 @@ const Pokemon = ({ props }) => {
               );
             })}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
