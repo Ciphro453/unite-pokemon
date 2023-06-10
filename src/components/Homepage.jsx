@@ -3,7 +3,7 @@ import data from "../assets/data.json";
 
 const Homepage = () => {
   return (
-    <div className="min-h-screen min-w-screen">
+    <div className="min-w-screen">
       <div className="min-w-screen w-[60%] mx-auto bg-slate-800 rounded-md shadow-md shadow-black p-4">
         <div className="flex flex-wrap justify-evenly">
           {data.map((pokemon, key) => {

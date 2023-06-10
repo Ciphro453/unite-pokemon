@@ -2,7 +2,7 @@ import data from "../assets/data.json";
 
 const TierList = () => {
   return (
-    <div className="min-h-screen min-w-screen">
+    <div className="min-w-screen">
       <div>
         <div className="text-black text-2xl mx-auto w-[60%] rounded-md bg-slate-800 border-slate-800 border-2 shadow-md shadow-black h-28 mb-6">
           <div className="bg-red-400 w-1/12 h-full rounded-l-md flex justify-center items-center">

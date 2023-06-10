@@ -159,7 +159,7 @@
             {
                 "id": 10,
                 "name": "Attack",
-                "type": "Auto Attack",
+                "type": "Basic",
                 "description": "Slash at enemies in front of Aegislash, dealing damage to them. If the boost count is one or more, auto attacks become a boosted attack. When in Sword Stance or No Guard: pierce through enemies, dealing damage. When in Shield Stance: ram enemies, dealing damage and leaving them unable to act for .1s, restore HP, and reduce the cooldown of Sacred Sword and Shadow Claw by 1s when this attack hits. Every boosted attack consumes one boost count. Up to 4 boosted attacks can be stored.",
                 "level": "",
                 "image": "",
