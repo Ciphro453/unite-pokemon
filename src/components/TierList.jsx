@@ -40,7 +40,7 @@ const TierList = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-evenly md:justify-center lg:w-[61%] lg:mx-auto">
+      <div className="flex flex-wrap justify-evenly lg:w-[61%] lg:mx-auto md:mx-5">
         {data.map((pokemon) => {
           return (
             <div
