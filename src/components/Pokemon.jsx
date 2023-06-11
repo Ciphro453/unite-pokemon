@@ -1,13 +1,19 @@
 import { useLocation } from "react-router";
 import data from "../assets/data.json";
 
-const Pokemon = ({ props }) => {
+const Pokemon = () => {
   const state = useLocation();
   const pokemon = data[state.state.id];
-  console.log(pokemon);
+
   return (
     <div className="min-w-screen">
-      <div className="text-white w-[60%] mx-auto bg-slate-800 rounded-md shadow-md shadow-black flex justify-between items-start">
+      <div className="flex w-[60%] mx-auto">
+        <div className="text-white flex md:w-40 md:mx-10 lg:ml-0 mb-6 bg-slate-800 rounded-md shadow-md shadow-black justify-evenly px-1 py-1 items-center">
+          <h1 className="bg-slate-900 rounded-md px-4 py-1">{pokemon.name}</h1>
+          <h1 className="rounded-md px-4 py-1">Builds</h1>
+        </div>
+      </div>
+      <div className="text-white md:mx-10 lg:w-[60%] lg:mx-auto bg-slate-800 rounded-md shadow-md shadow-black flex justify-between items-start">
         <div className="flex flex-col items-center justify-center text-center">
           <div className="">
             <img
@@ -21,7 +27,7 @@ const Pokemon = ({ props }) => {
               <p className="">{pokemon.role}</p>
             </div>
           </div>
-          <div className="flex lg:ml-4">
+          <div className="flex ml-4">
             {pokemon.evolution.map((evolution, key) => {
               if (evolution.level === "")
                 return (
