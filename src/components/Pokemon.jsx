@@ -8,7 +8,7 @@ const Pokemon = () => {
   return (
     <div className="min-w-screen">
       <div className="flex lg:w-[60%] mx-auto">
-        <div className="text-white flex md:mx-10 lg:ml-0 mb-6 bg-slate-800 rounded-md shadow-md shadow-black justify-evenly px-1 py-1 items-center">
+        <div className="text-white flex md:mx-10 lg:mx-0 mb-6 bg-slate-800 rounded-md shadow-md shadow-black justify-evenly px-1 py-1 items-center">
           <h1 className="bg-slate-900 rounded-md px-4 py-1 cursor-pointer">{pokemon.name}</h1>
           <h1 className="rounded-md px-4 py-1 cursor-pointer">Builds</h1>
         </div>
