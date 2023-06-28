@@ -1,16 +1,31 @@
 import { useLocation } from "react-router";
 import data from "../assets/data.json";
+import { useState } from "react";
 
 const Pokemon = () => {
   const state = useLocation();
   const pokemon = data[state.state.id];
+  const [build, setBuild] = useState(false);
+  console.log(build)
 
   return (
     <div className="min-w-screen">
       <div className="flex lg:w-[60%] mx-auto">
         <div className="text-white flex md:mx-10 lg:mx-0 mb-6 bg-slate-800 rounded-md shadow-md shadow-black justify-evenly px-1 py-1 items-center">
-          <h1 className="bg-slate-900 rounded-md px-4 py-1 cursor-pointer">{pokemon.name}</h1>
-          <h1 className="rounded-md px-4 py-1 cursor-pointer">Builds</h1>
+          <h1
+            onClick={() => setBuild(false)}
+            style={{backgroundColor: build? 'rgb(30 41 59)': 'rgb(15 23 42)'}}
+            className="rounded-md px-4 py-1 cursor-pointer"
+          >
+            {pokemon.name}
+          </h1>
+          <h1
+            onClick={() => setBuild(true)}
+            className="rounded-md px-4 py-1 cursor-pointer"
+            style={{backgroundColor: build? 'rgb(15 23 42)': 'rgb(30 41 59)'}}
+          >
+            Builds
+          </h1>
         </div>
       </div>
       <div className="text-white md:mx-10 lg:w-[60%] lg:mx-auto bg-slate-800 rounded-md shadow-md shadow-black flex justify-between items-start">
@@ -60,7 +75,7 @@ const Pokemon = () => {
               console.log(skills);
               if (skills.image === "")
                 return (
-                  <div className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3 p-3">
+                  <div className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3 p-3" key={key}>
                     <h1 className="text-2xl">{skills.name}</h1>
                     <p className="text-slate-400 text-lg pb-2">{skills.type}</p>
                     <p className="">{skills.description}</p>
@@ -69,7 +84,7 @@ const Pokemon = () => {
 
               if (skills.level === "")
                 return (
-                  <div className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3">
+                  <div className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3" key={key}>
                     <div className="flex items-center">
                       <img
                         className="m-3 h-16 w-auto shadow-sm shadow-slate-950 rounded-full"
@@ -85,7 +100,7 @@ const Pokemon = () => {
                 );
 
               return (
-                <div className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3">
+                <div className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3" key={key}>
                   <div className="flex items-center">
                     <img
                       className="m-3 h-16 w-auto shadow-sm shadow-slate-950 rounded-full"
@@ -107,7 +122,7 @@ const Pokemon = () => {
                   <div className="px-1 flex flex-col">
                     {skills.skill_upgrades.map((upgrades, key) => {
                       return (
-                        <div className="bg-slate-800 rounded-md shadow-sm shadow-slate-950 m-2">
+                        <div className="bg-slate-800 rounded-md shadow-sm shadow-slate-950 m-2" key={key}>
                           <div className="flex items-center">
                             <img
                               className="m-3 h-16 w-auto shadow-sm shadow-slate-950 rounded-full"
