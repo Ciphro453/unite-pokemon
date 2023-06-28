@@ -6,7 +6,6 @@ const Pokemon = () => {
   const state = useLocation();
   const pokemon = data[state.state.id];
   const [build, setBuild] = useState(false);
-  console.log(build)
 
   return (
     <div className="min-w-screen">
@@ -14,7 +13,9 @@ const Pokemon = () => {
         <div className="text-white flex md:mx-10 lg:mx-0 mb-6 bg-slate-800 rounded-md shadow-md shadow-black justify-evenly px-1 py-1 items-center">
           <h1
             onClick={() => setBuild(false)}
-            style={{backgroundColor: build? 'rgb(30 41 59)': 'rgb(15 23 42)'}}
+            style={{
+              backgroundColor: build ? "rgb(30 41 59)" : "rgb(15 23 42)",
+            }}
             className="rounded-md px-4 py-1 cursor-pointer"
           >
             {pokemon.name}
@@ -22,7 +23,9 @@ const Pokemon = () => {
           <h1
             onClick={() => setBuild(true)}
             className="rounded-md px-4 py-1 cursor-pointer"
-            style={{backgroundColor: build? 'rgb(15 23 42)': 'rgb(30 41 59)'}}
+            style={{
+              backgroundColor: build ? "rgb(15 23 42)" : "rgb(30 41 59)",
+            }}
           >
             Builds
           </h1>
@@ -70,21 +73,52 @@ const Pokemon = () => {
           </div>
         </div>
         <div className="w-[60%]">
-          <div>
-            {pokemon.skills.map((skills, key) => {
-              console.log(skills);
-              if (skills.image === "")
-                return (
-                  <div className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3 p-3" key={key}>
-                    <h1 className="text-2xl">{skills.name}</h1>
-                    <p className="text-slate-400 text-lg pb-2">{skills.type}</p>
-                    <p className="">{skills.description}</p>
-                  </div>
-                );
+          {build ? (
+            <div></div>
+          ) : (
+            <div>
+              {pokemon.skills.map((skills, key) => {
+                if (skills.image === "")
+                  return (
+                    <div
+                      className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3 p-3"
+                      key={key}
+                    >
+                      <h1 className="text-2xl">{skills.name}</h1>
+                      <p className="text-slate-400 text-lg pb-2">
+                        {skills.type}
+                      </p>
+                      <p className="">{skills.description}</p>
+                    </div>
+                  );
 
-              if (skills.level === "")
+                if (skills.level === "")
+                  return (
+                    <div
+                      className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3"
+                      key={key}
+                    >
+                      <div className="flex items-center">
+                        <img
+                          className="m-3 h-16 w-auto shadow-sm shadow-slate-950 rounded-full"
+                          src={`${skills.image}.png`}
+                        />
+                        <div className="flex flex-col">
+                          <h1 className="text-2xl">{skills.name}</h1>
+                          <p className="text-slate-400 text-lg">
+                            {skills.type}
+                          </p>
+                        </div>
+                      </div>
+                      <p className="px-3 pb-3">{skills.description}</p>
+                    </div>
+                  );
+
                 return (
-                  <div className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3" key={key}>
+                  <div
+                    className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3"
+                    key={key}
+                  >
                     <div className="flex items-center">
                       <img
                         className="m-3 h-16 w-auto shadow-sm shadow-slate-950 rounded-full"
@@ -95,59 +129,47 @@ const Pokemon = () => {
                         <p className="text-slate-400 text-lg">{skills.type}</p>
                       </div>
                     </div>
+                    <p className="px-3 pb-3">Unlocks at {skills.level}</p>
                     <p className="px-3 pb-3">{skills.description}</p>
-                  </div>
-                );
-
-              return (
-                <div className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3" key={key}>
-                  <div className="flex items-center">
-                    <img
-                      className="m-3 h-16 w-auto shadow-sm shadow-slate-950 rounded-full"
-                      src={`${skills.image}.png`}
-                    />
-                    <div className="flex flex-col">
-                      <h1 className="text-2xl">{skills.name}</h1>
-                      <p className="text-slate-400 text-lg">{skills.type}</p>
+                    <div className="flex justify-center items-center mx-3">
+                      <img
+                        className="rounded-md lg:w-full mb-3 shadow-sm shadow-slate-950"
+                        src={`${skills.in_game_image}.png`}
+                      />
+                    </div>
+                    <div className="px-1 flex flex-col">
+                      {skills.skill_upgrades.map((upgrades, key) => {
+                        return (
+                          <div
+                            className="bg-slate-800 rounded-md shadow-sm shadow-slate-950 m-2"
+                            key={key}
+                          >
+                            <div className="flex items-center">
+                              <img
+                                className="m-3 h-16 w-auto shadow-sm shadow-slate-950 rounded-full"
+                                src={`${upgrades.image}.png`}
+                              />
+                              <h1 className="text-2xl">{upgrades.name}</h1>
+                            </div>
+                            <p className="px-3 pb-3">
+                              Unlocks at Level {upgrades.level}
+                            </p>
+                            <p className="px-3 pb-3">{upgrades.description}</p>
+                            <div className="flex justify-center items-center mx-3">
+                              <img
+                                className="rounded-md lg:w-full mb-3 shadow-sm shadow-slate-950"
+                                src={`${upgrades.in_game_image}.png`}
+                              />
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
-                  <p className="px-3 pb-3">Unlocks at {skills.level}</p>
-                  <p className="px-3 pb-3">{skills.description}</p>
-                  <div className="flex justify-center items-center mx-3">
-                    <img
-                      className="rounded-md lg:w-full mb-3 shadow-sm shadow-slate-950"
-                      src={`${skills.in_game_image}.png`}
-                    />
-                  </div>
-                  <div className="px-1 flex flex-col">
-                    {skills.skill_upgrades.map((upgrades, key) => {
-                      return (
-                        <div className="bg-slate-800 rounded-md shadow-sm shadow-slate-950 m-2" key={key}>
-                          <div className="flex items-center">
-                            <img
-                              className="m-3 h-16 w-auto shadow-sm shadow-slate-950 rounded-full"
-                              src={`${upgrades.image}.png`}
-                            />
-                            <h1 className="text-2xl">{upgrades.name}</h1>
-                          </div>
-                          <p className="px-3 pb-3">
-                            Unlocks at Level {upgrades.level}
-                          </p>
-                          <p className="px-3 pb-3">{upgrades.description}</p>
-                          <div className="flex justify-center items-center mx-3">
-                            <img
-                              className="rounded-md lg:w-full mb-3 shadow-sm shadow-slate-950"
-                              src={`${upgrades.in_game_image}.png`}
-                            />
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </div>
     </div>
