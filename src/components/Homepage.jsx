@@ -7,7 +7,7 @@ const Homepage = () => {
       <form className="lg:w-[60%] lg:mx-auto md:mx-10 mb-6 shadow-md shadow-black">
         <label
           for="default-search"
-          class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+          class="mb-2 text-sm font-medium text-gray-900 sr-only"
         >
           Search
         </label>
