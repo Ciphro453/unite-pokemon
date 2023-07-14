@@ -31,8 +31,8 @@ const Pokemon = () => {
           </h1>
         </div>
       </div>
-      <div className="text-white md:mx-10 lg:w-[60%] lg:mx-auto bg-slate-800 rounded-md shadow-md shadow-black flex justify-between items-start">
-        <div className="flex flex-col items-center justify-center text-center">
+      <div className="text-white md:mx-10 lg:w-[60%] lg:mx-auto bg-slate-800 rounded-md shadow-md shadow-black flex justify-between">
+        <div className="flex flex-col items-center justify-center text-center h-fit">
           <div className="">
             <img
               className="m-2 h-auto w-48 rounded-md"
