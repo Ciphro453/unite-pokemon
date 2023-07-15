@@ -49,7 +49,7 @@ const Pokemon = () => {
             {pokemon.evolution.map((evolution, key) => {
               if (evolution.level === "")
                 return (
-                  <div className="flex flex-col items-center">
+                  <div className="flex flex-col items-center" key={key}>
                     <img
                       className="bg-slate-700 rounded-full border-slate-800 border-2 shadow-sm shadow-slate-950 w-16 h-auto m-4"
                       src={`${evolution.image}.png`}
@@ -58,7 +58,7 @@ const Pokemon = () => {
                   </div>
                 );
               return (
-                <div className="flex items-center">
+                <div className="flex items-center" key={key}>
                   <div className="flex flex-col items-center justify-center">
                     <img
                       className="bg-slate-700 rounded-full border-slate-800 border-2 shadow-sm shadow-slate-950 w-16 h-auto m-2"
@@ -74,7 +74,60 @@ const Pokemon = () => {
         </div>
         <div className="w-[60%]">
           {build ? (
-            <div></div>
+            <div>
+              {pokemon.builds.map((actualBuild, key) => {
+                return (
+                  <div
+                    key={key}
+                    className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3 p-3"
+                  >
+                    <div>
+                      <p>Build: {actualBuild.name}</p>
+                      <p>Recommended Lane: {actualBuild.lane}</p>
+                    </div>
+                    <div className="flex items-center">
+                      {actualBuild.build_skills.map((buildSkill, key) => {
+                        return (
+                          <div key={key} className="flex flex-col items-center">
+                            <img
+                              className="h-20 w-auto shadow-sm shadow-slate-950 rounded-full"
+                              src={`${buildSkill.image}.png`}
+                            />
+                            <p>Level {buildSkill.level}</p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div className="flex">
+                      <div className="flex items-center">
+                        {actualBuild.held_items.map((heldItem, key) => {
+                          return (
+                            <div key={key}>
+                              <img
+                                className="h-14 w-auto"
+                                src={`${heldItem.image}.png`}
+                              />
+                            </div>
+                          );
+                        })}
+                      </div>
+                      <div>
+                        {actualBuild.battle_items.map((battleItem, key) => {
+                          return (
+                            <div key={key}>
+                              <img
+                                className="h-16 w-auto"
+                                src={`${battleItem.image}.png`}
+                              />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           ) : (
             <div>
               {pokemon.skills.map((skills, key) => {

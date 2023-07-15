@@ -6,25 +6,25 @@ const Homepage = () => {
     <div className="min-w-screen">
       <form className="lg:w-[60%] lg:mx-auto md:mx-10 mb-6 shadow-md shadow-black">
         <label
-          for="default-search"
-          class="mb-2 text-sm font-medium text-gray-900 sr-only"
+          htmlFor="default-search"
+          className="mb-2 text-sm font-medium text-gray-900 sr-only"
         >
           Search
         </label>
-        <div class="relative">
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+        <div className="relative">
+          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg
               aria-hidden="true"
-              class="w-5 h-5 text-gray-400"
+              className="w-5 h-5 text-gray-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               ></path>
             </svg>
@@ -32,7 +32,7 @@ const Homepage = () => {
           <input
             type="search"
             id="default-search"
-            class="block w-full p-4 pl-10 text-sm text-white border rounded-lg bg-slate-800 border-gray-600 placeholder-gray-400"
+            className="block w-full p-4 pl-10 text-sm text-white border rounded-lg bg-slate-800 border-gray-600 placeholder-gray-400"
             placeholder="Search..."
             required
           />
@@ -40,7 +40,7 @@ const Homepage = () => {
       </form>
 
       <div className="min-w-screen md:mx-10 lg:w-[60%] lg:mx-auto bg-slate-800 rounded-md shadow-md shadow-black p-4">
-        <div className="flex flex-wrap justify-evenly">
+        <div className="flex flex-wrap justify-between">
           {data.map((pokemon, key) => {
             return (
               <Link
