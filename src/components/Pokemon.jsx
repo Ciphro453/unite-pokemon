@@ -8,7 +8,7 @@ const Pokemon = () => {
   const [build, setBuild] = useState(false);
 
   return (
-    <div className="min-w-screen">
+    <div className="min-w-screen min-h-screen">
       <div className="flex lg:w-[60%] mx-auto">
         <div className="text-white flex md:mx-10 lg:mx-0 mb-6 bg-slate-800 rounded-md shadow-md shadow-black justify-evenly px-1 py-1 items-center">
           <h1
@@ -32,7 +32,7 @@ const Pokemon = () => {
         </div>
       </div>
       <div className="text-white md:mx-10 lg:w-[60%] lg:mx-auto bg-slate-800 rounded-md shadow-md shadow-black flex justify-between">
-        <div className="flex flex-col items-center justify-center text-center h-fit">
+        <div className="flex flex-col items-center justify-center text-center h-fit sticky">
           <div className="">
             <img
               className="m-2 h-auto w-48 rounded-md"
@@ -82,46 +82,54 @@ const Pokemon = () => {
                     className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3 p-3"
                   >
                     <div>
-                      <p>Build: {actualBuild.name}</p>
-                      <p>Recommended Lane: {actualBuild.lane}</p>
+                      <p className="text-2xl">Build: {actualBuild.name}</p>
+                      <p className="mt-2 mb-4 text-slate-400">
+                        Recommended Lane: {actualBuild.lane}
+                      </p>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center justify-evenly ">
                       {actualBuild.build_skills.map((buildSkill, key) => {
                         return (
-                          <div key={key} className="flex flex-col items-center">
+                          <div key={key} className="flex flex-col items-center ">
                             <img
-                              className="h-20 w-auto shadow-sm shadow-slate-950 rounded-full"
+                              className="h-20 w-auto shadow-sm shadow-slate-950 rounded-full mb-1"
                               src={`${buildSkill.image}.png`}
                             />
-                            <p>Level {buildSkill.level}</p>
+                            <p className="mb-2">Level {buildSkill.level}</p>
                           </div>
                         );
                       })}
                     </div>
-                    <div className="flex">
-                      <div className="flex items-center">
-                        {actualBuild.held_items.map((heldItem, key) => {
-                          return (
-                            <div key={key}>
-                              <img
-                                className="h-14 w-auto"
-                                src={`${heldItem.image}.png`}
-                              />
-                            </div>
-                          );
-                        })}
+                    <div className="flex justify-around items-center">
+                      <div className="flex flex-col items-center">
+                        <p className="my-3">Held Items:</p>
+                        <div className="flex bg-slate-800 rounded-md shadow-sm shadow-slate-950">
+                          {actualBuild.held_items.map((heldItem, key) => {
+                            return (
+                              <div key={key} className="mx-4 my-2 hover:bg-slate-700 hover:rounded-md p-1 rounded-md">
+                                <img
+                                  className="h-12 w-auto "
+                                  src={`${heldItem.image}.png`}
+                                />
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
-                      <div>
-                        {actualBuild.battle_items.map((battleItem, key) => {
-                          return (
-                            <div key={key}>
-                              <img
-                                className="h-16 w-auto"
-                                src={`${battleItem.image}.png`}
-                              />
-                            </div>
-                          );
-                        })}
+                      <div className="flex flex-col items-center">
+                        <p className="my-3">Battle Item:</p>
+                        <div className="flex items-center bg-slate-800 rounded-md shadow-sm shadow-slate-950 ">
+                          {actualBuild.battle_items.map((battleItem, key) => {
+                            return (
+                              <div key={key}>
+                                <img
+                                  className="h-14 w-auto m-2 hover:bg-slate-700 hover:rounded-md p-1"
+                                  src={`${battleItem.image}.png`}
+                                />
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
                     </div>
                   </div>
