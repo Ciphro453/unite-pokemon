@@ -9,7 +9,7 @@ const Pokemon = () => {
 
   return (
     <div className="min-w-screen min-h-screen">
-      <div className="flex lg:w-[60%] mx-auto">
+      <div className="flex mx-2 lg:w-[60%] lg:mx-auto">
         <div className="text-white flex md:mx-10 lg:mx-0 mb-6 bg-slate-800 rounded-md shadow-md shadow-black justify-evenly px-1 py-1 items-center">
           <h1
             onClick={() => setBuild(false)}
@@ -31,7 +31,7 @@ const Pokemon = () => {
           </h1>
         </div>
       </div>
-      <div className="text-white md:mx-10 lg:w-[60%] lg:mx-auto bg-slate-800 rounded-md shadow-md shadow-black flex justify-between">
+      <div className="text-white mx-2 md:mx-10 lg:w-[60%] lg:mx-auto bg-slate-800 rounded-md shadow-md shadow-black flex flex-col md:flex-row justify-between items-center md:items-start">
         <div className="flex flex-col items-center justify-center text-center h-fit sticky">
           <div className="">
             <img
@@ -72,14 +72,14 @@ const Pokemon = () => {
             })}
           </div>
         </div>
-        <div className="w-[60%]">
+        <div className=" md:w-[60%]">
           {build ? (
             <div>
               {pokemon.builds.map((actualBuild, key) => {
                 return (
                   <div
                     key={key}
-                    className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3 p-3"
+                    className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mx-2 md:mr-3 my-3 p-5 md:p-3"
                   >
                     <div>
                       <p className="text-2xl">Build: {actualBuild.name}</p>
@@ -111,10 +111,10 @@ const Pokemon = () => {
                             return (
                               <div
                                 key={key}
-                                className="mx-4 my-2 hover:bg-slate-700 hover:rounded-md p-1 rounded-md"
+                                className="mx-4 my-2 hover:bg-slate-700 hover:rounded-md md:p-1 rounded-md"
                               >
                                 <img
-                                  className="h-12"
+                                  className="h-10 md:h-12"
                                   src={`${heldItem.image}.png`}
                                 />
                               </div>
@@ -129,7 +129,7 @@ const Pokemon = () => {
                             return (
                               <div key={key}>
                                 <img
-                                  className="h-14 w-auto m-2 hover:bg-slate-700 hover:rounded-md p-1"
+                                  className="h-12 md:h-14 w-auto m-1 md:m-2 hover:bg-slate-700 hover:rounded-md p-1"
                                   src={`${battleItem.image}.png`}
                                 />
                               </div>
@@ -148,7 +148,7 @@ const Pokemon = () => {
                 if (skills.image === "")
                   return (
                     <div
-                      className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3 p-3"
+                      className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mx-2 md:mr-3 my-3 p-3"
                       key={key}
                     >
                       <h1 className="text-2xl">{skills.name}</h1>
@@ -162,7 +162,7 @@ const Pokemon = () => {
                 if (skills.level === "")
                   return (
                     <div
-                      className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3"
+                      className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mx-2 md:mr-3 my-3"
                       key={key}
                     >
                       <div className="flex items-center">
@@ -183,7 +183,7 @@ const Pokemon = () => {
 
                 return (
                   <div
-                    className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mr-3 my-3"
+                    className="bg-slate-700 rounded-md shadow-sm shadow-slate-950 mx-2 md:mr-3 my-3"
                     key={key}
                   >
                     <div className="flex items-center">

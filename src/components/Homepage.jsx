@@ -15,7 +15,7 @@ const Homepage = () => {
 
   return (
     <div className="min-w-screen min-h-screen">
-      <form className="lg:w-[60%] lg:mx-auto md:mx-10 mb-6 shadow-md shadow-black">
+      <form className="lg:w-[60%] lg:mx-auto mx-2 md:mx-10 mb-6 shadow-md shadow-black">
         <label
           htmlFor="default-search"
           className="mb-2 text-sm font-medium text-gray-900 sr-only"
@@ -52,7 +52,7 @@ const Homepage = () => {
         </div>
       </form>
 
-      <div className="min-w-screen md:mx-10 lg:w-[60%] lg:mx-auto bg-slate-800 rounded-md shadow-md shadow-black pt-2 pb-2 px-2">
+      <div className="min-w-screen mx-2 md:mx-10 lg:w-[60%] lg:mx-auto bg-slate-800 rounded-md shadow-md shadow-black lg:pt-4 lg:pb-4 py-2 px-1 lg:px-2">
         <div className="flex flex-wrap justify-evenly">
           {filteredPokemon.map((pokemon, key) => {
             return (
@@ -61,7 +61,7 @@ const Homepage = () => {
                 state={{ id: pokemon.id }}
                 id={pokemon.id}
                 key={key}
-                className="bg-slate-700 rounded-md border-slate-700 border-2 m-3 hover:border-slate-400 hover:border-2 overflow-hidden cursor-pointer relative text-slate-400 hover:text-slate-200 transition duration-500 ease-in-out shadow-sm shadow-slate-950"
+                className="bg-slate-700 rounded-md border-slate-700 border-2 m-2 lg:m-3 hover:border-slate-400 hover:border-2 overflow-hidden cursor-pointer relative text-slate-400 hover:text-slate-200 transition duration-500 ease-in-out shadow-sm shadow-slate-950"
               >
                 <img
                   className="hover:scale-125 object-cover overflow-hidden transition duration-300 ease-in-out h-28 w-auto"

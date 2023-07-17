@@ -4,7 +4,7 @@ import logo from "../assets/logo.png";
 const Navbar = () => {
   return (
     <div className="mb-6 min-w-screen bg-slate-700 h-20 flex items-center shadow-sm shadow-black">
-      <div className="md:px-10 lg:px-0 lg:w-[60%] mx-auto flex justify-between items-center w-full">
+      <div className="px-2 md:px-10 lg:px-0 lg:w-[60%] mx-auto flex justify-between items-center w-full">
         <Link to={"/"}>
           <img
             className="h-16 w-auto rounded-md cursor-pointer"
