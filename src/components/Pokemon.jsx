@@ -90,7 +90,10 @@ const Pokemon = () => {
                     <div className="flex items-center justify-evenly ">
                       {actualBuild.build_skills.map((buildSkill, key) => {
                         return (
-                          <div key={key} className="flex flex-col items-center ">
+                          <div
+                            key={key}
+                            className="flex flex-col items-center "
+                          >
                             <img
                               className="h-20 w-auto shadow-sm shadow-slate-950 rounded-full mb-1"
                               src={`${buildSkill.image}.png`}
@@ -106,9 +109,12 @@ const Pokemon = () => {
                         <div className="flex bg-slate-800 rounded-md shadow-sm shadow-slate-950">
                           {actualBuild.held_items.map((heldItem, key) => {
                             return (
-                              <div key={key} className="mx-4 my-2 hover:bg-slate-700 hover:rounded-md p-1 rounded-md">
+                              <div
+                                key={key}
+                                className="mx-4 my-2 hover:bg-slate-700 hover:rounded-md p-1 rounded-md"
+                              >
                                 <img
-                                  className="h-12 w-auto "
+                                  className="h-12"
                                   src={`${heldItem.image}.png`}
                                 />
                               </div>

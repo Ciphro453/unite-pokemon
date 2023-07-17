@@ -1,9 +1,20 @@
 import { Link } from "react-router-dom";
 import data from "../assets/data.json";
+import { useState } from "react";
+import { useMemo } from "react";
 
 const Homepage = () => {
+  const [query, setQuery] = useState("");
+  const [pokemons, setPokemon] = useState(data);
+
+  console.log(pokemons);
+
+  const filteredPokemon = pokemons.filter((pokemon) => {
+    return pokemon.name.toLowerCase().includes(query.toLowerCase());
+  });
+
   return (
-    <div className="min-w-screen">
+    <div className="min-w-screen min-h-screen">
       <form className="lg:w-[60%] lg:mx-auto md:mx-10 mb-6 shadow-md shadow-black">
         <label
           htmlFor="default-search"
@@ -33,22 +44,24 @@ const Homepage = () => {
             type="search"
             id="default-search"
             className="block w-full p-4 pl-10 text-sm text-white border rounded-lg bg-slate-800 border-gray-600 placeholder-gray-400"
-            placeholder="Search..."
+            placeholder="Search for a Pokémon..."
             required
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
           />
         </div>
       </form>
 
-      <div className="min-w-screen md:mx-10 lg:w-[60%] lg:mx-auto bg-slate-800 rounded-md shadow-md shadow-black p-4">
-        <div className="flex flex-wrap justify-between">
-          {data.map((pokemon, key) => {
+      <div className="min-w-screen md:mx-10 lg:w-[60%] lg:mx-auto bg-slate-800 rounded-md shadow-md shadow-black pt-2 pb-2 px-2">
+        <div className="flex flex-wrap justify-evenly">
+          {filteredPokemon.map((pokemon, key) => {
             return (
               <Link
                 to={`/pokemon/${pokemon.name.toLowerCase()}`}
                 state={{ id: pokemon.id }}
                 id={pokemon.id}
                 key={key}
-                className="bg-slate-700 rounded-md border-slate-700 border-2 m-4 hover:border-slate-400 hover:border-2 overflow-hidden cursor-pointer relative text-slate-400 hover:text-slate-200 transition duration-500 ease-in-out shadow-sm shadow-slate-950"
+                className="bg-slate-700 rounded-md border-slate-700 border-2 m-3 hover:border-slate-400 hover:border-2 overflow-hidden cursor-pointer relative text-slate-400 hover:text-slate-200 transition duration-500 ease-in-out shadow-sm shadow-slate-950"
               >
                 <img
                   className="hover:scale-125 object-cover overflow-hidden transition duration-300 ease-in-out h-28 w-auto"
