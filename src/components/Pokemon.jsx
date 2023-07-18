@@ -1,11 +1,15 @@
 import { useLocation } from "react-router";
 import data from "../assets/data.json";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 
 const Pokemon = () => {
   const state = useLocation();
   const pokemon = data[state.state.id];
-  const [build, setBuild] = useState(false);
+  const [build, setBuild] = useState();
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <div className="min-w-screen min-h-screen">
