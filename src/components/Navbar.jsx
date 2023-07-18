@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { FaTimes, FaBars } from "react-icons/fa";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -16,7 +15,7 @@ const Navbar = () => {
             alt="unite logo"
           />
         </Link>
-        <div className="hidden md:flex font-large">
+        <div className="flex font-large">
           <Link
             to={"/"}
             className="px-10 cursor-pointer text-slate-300 hover:text-white hover:scale-105 duration-300 ease-in-out"
@@ -27,10 +26,10 @@ const Navbar = () => {
             to={"/tier-list"}
             className="cursor-pointer text-slate-300 hover:text-white hover:scale-105 duration-300 ease-in-out"
           >
-            Create Tier List
+            Tier List
           </Link>
         </div>
-        <div
+        {/* <div
           onClick={() => setNav(!nav)}
           className="z-20 cursor-pointer md:hidden transition-all duration-400 text-slate-300 hover:text-white"
         >
@@ -58,7 +57,7 @@ const Navbar = () => {
               Create Tier List
             </Link>
           </ul>
-        )}
+        )} */}
       </div>
     </div>
   );

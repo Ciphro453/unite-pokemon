@@ -1,6 +1,6 @@
 import { useLocation } from "react-router";
 import data from "../assets/data.json";
-import { useLayoutEffect, useState } from "react";
+import { useState, useLayoutEffect } from "react";
 
 const Pokemon = () => {
   const state = useLocation();
@@ -101,6 +101,7 @@ const Pokemon = () => {
                             <img
                               className="h-20 w-auto shadow-sm shadow-slate-950 rounded-full mb-1"
                               src={`${buildSkill.image}.png`}
+                              title={`${buildSkill.name}`}
                             />
                             <p className="mb-2">Level {buildSkill.level}</p>
                           </div>
@@ -120,6 +121,7 @@ const Pokemon = () => {
                                 <img
                                   className="h-10 md:h-12"
                                   src={`${heldItem.image}.png`}
+                                  title={`${heldItem.name}`}
                                 />
                               </div>
                             );
@@ -135,6 +137,7 @@ const Pokemon = () => {
                                 <img
                                   className="h-12 md:h-14 w-auto m-1 md:m-2 hover:bg-slate-700 hover:rounded-md p-1"
                                   src={`${battleItem.image}.png`}
+                                  title={`${battleItem.name}`}
                                 />
                               </div>
                             );

@@ -50,7 +50,7 @@ const Homepage = () => {
         </div>
       </form>
 
-      <div className="min-w-screen mx-2 md:mx-10 lg:w-[60%] lg:mx-auto bg-slate-800 rounded-md shadow-md shadow-black lg:pt-4 lg:pb-4 py-2 px-1 lg:px-2">
+      <div className="min-w-screen mx-2 md:mx-10 lg:w-[60%] lg:mx-auto bg-slate-800 rounded-md shadow-md shadow-black md:pt-4 md:pb-4 py-2 px-1 md:px-2">
         <div className="flex flex-wrap justify-evenly">
           {filteredPokemon.map((pokemon, key) => {
             console.log(filteredPokemon)
