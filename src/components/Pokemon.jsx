@@ -12,7 +12,7 @@ const Pokemon = () => {
   });
 
   return (
-    <div className="min-w-screen min-h-screen">
+    <div className="min-w-screen">
       <div className="flex mx-2 lg:w-[60%] lg:mx-auto">
         <div className="text-white flex md:mx-10 lg:mx-0 mb-6 bg-slate-800 rounded-md shadow-md shadow-black justify-evenly px-1 py-1 items-center">
           <h1
