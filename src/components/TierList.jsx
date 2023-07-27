@@ -12,7 +12,6 @@ const TierList = () => {
               src="https://imgur.com/sGMWUvO.png"
               title="Comfey"
             />
-
             <img
               className="h-28 w-auto px-1 md:px-2 py-1"
               src="https://imgur.com/rN23xqn.png"
@@ -22,6 +21,11 @@ const TierList = () => {
               className="h-28 w-auto px-1 md:px-2 py-1"
               src="https://imgur.com/L5Jqr98.png"
               title="Leafeon"
+            />
+            <img
+              className="h-28 w-auto px-1 md:px-2 py-1"
+              src="https://imgur.com/ytCnTot.png"
+              title="Mewtwo X"
             />
             <img
               className="h-28 w-auto px-1 md:px-2 py-1"

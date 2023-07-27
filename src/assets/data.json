@@ -8140,6 +8140,16 @@
   },
   {
     "id": 37,
+    "name": "Mewtwo X",
+    "difficulty": "Novice",
+    "role": "All-Rounder",
+    "image": "https://imgur.com/ytCnTot",
+    "evolution": [],
+    "builds": [],
+    "skills": []
+  },
+  {
+    "id": 38,
     "name": "Mr. Mime",
     "difficulty": "Intermediate",
     "role": "Supporter",
@@ -8337,7 +8347,7 @@
     ]
   },
   {
-    "id": 38,
+    "id": 39,
     "name": "Pikachu",
     "difficulty": "Novice",
     "role": "Attacker",
@@ -8535,7 +8545,7 @@
     ]
   },
   {
-    "id": 39,
+    "id": 40,
     "name": "Sableye",
     "difficulty": "Intermediate",
     "role": "Supporter",
@@ -8733,7 +8743,7 @@
     ]
   },
   {
-    "id": 40,
+    "id": 41,
     "name": "Scizor",
     "difficulty": "Intermediate",
     "role": "All-Rounder",
@@ -9070,7 +9080,7 @@
     ]
   },
   {
-    "id": 41,
+    "id": 42,
     "name": "Slowbro",
     "difficulty": "Intermediate",
     "role": "Defender",
@@ -9281,7 +9291,7 @@
     ]
   },
   {
-    "id": 42,
+    "id": 43,
     "name": "Snorlax",
     "difficulty": "Novice",
     "role": "Defender",
@@ -9479,7 +9489,7 @@
     ]
   },
   {
-    "id": 43,
+    "id": 44,
     "name": "Sylveon",
     "difficulty": "Intermediate",
     "role": "Attacker",
@@ -9710,7 +9720,7 @@
     ]
   },
   {
-    "id": 44,
+    "id": 45,
     "name": "Talonflame",
     "difficulty": "Novice",
     "role": "Speedster",
@@ -9927,7 +9937,7 @@
     ]
   },
   {
-    "id": 45,
+    "id": 46,
     "name": "Trevenant",
     "difficulty": "Intermediate",
     "role": "Defender",
@@ -10138,7 +10148,7 @@
     ]
   },
   {
-    "id": 46,
+    "id": 47,
     "name": "Tsareena",
     "difficulty": "Expert",
     "role": "All-Rounder",
@@ -10365,7 +10375,7 @@
     ]
   },
   {
-    "id": 47,
+    "id": 48,
     "name": "Tyranitar",
     "difficulty": "Intermediate",
     "role": "All-Rounder",
@@ -10602,7 +10612,7 @@
     ]
   },
   {
-    "id": 48,
+    "id": 49,
     "name": "Umbreon",
     "difficulty": "Novice",
     "role": "Defender",
@@ -10801,7 +10811,7 @@
     ]
   },
   {
-    "id": 49,
+    "id": 50,
     "name": "Urshifu",
     "difficulty": "Intermediate",
     "role": "All-Rounder",
@@ -11052,7 +11062,7 @@
     ]
   },
   {
-    "id": 50,
+    "id": 51,
     "name": "Venusaur",
     "difficulty": "Intermediate",
     "role": "Attacker",
@@ -11269,7 +11279,7 @@
     ]
   },
   {
-    "id": 51,
+    "id": 52,
     "name": "Wigglytuff",
     "difficulty": "Intermediate",
     "role": "Supporter",
@@ -11490,7 +11500,7 @@
     ]
   },
   {
-    "id": 52,
+    "id": 53,
     "name": "Zacian",
     "difficulty": "Intermediate",
     "role": "All-Rounder",
@@ -11688,7 +11698,7 @@
     ]
   },
   {
-    "id": 53,
+    "id": 54,
     "name": "Zeraora",
     "difficulty": "Expert",
     "role": "Speedster",
@@ -11887,7 +11897,7 @@
     ]
   },
   {
-    "id": 54,
+    "id": 55,
     "name": "Zoroark",
     "difficulty": "Expert",
     "role": "Speedster",
