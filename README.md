@@ -142,3 +142,5 @@ All licenses belong to The Pokémon Company and Nintendo.
 We would like to express our gratitude to all the contributors and supporters who helped make this project possible. Special thanks to the developers of React, Tailwind CSS, and npm for providing the tools and libraries that enabled us to build this database.
 
 ---
+
+Thank you for choosing the Pokémon Unite Database! We hope this comprehensive resource enhances your gaming experience and helps you become a master in Pokémon Unite. If you encounter any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request. Happy exploring and battling!
