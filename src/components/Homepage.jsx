@@ -13,18 +13,18 @@ const Homepage = () => {
 
   return (
     <div className="min-w-screen min-h-screen">
-      <form className="lg:w-[60%] lg:mx-auto mx-2 md:mx-10 mb-6 shadow-md shadow-black">
+      <form className="lg:w-[60%] lg:mx-auto mx-2 md:mx-10 mb-6 shadow-md shadow-black rounded-full">
         <label
           htmlFor="default-search"
-          className="mb-2 text-sm font-medium text-gray-900 sr-only"
+          className="mb-2 text-sm font-medium text-gray-900 sr-only "
         >
           Search
         </label>
-        <div className="relative">
-          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+        <div className="relative ">
+          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none ">
             <svg
               aria-hidden="true"
-              className="w-5 h-5 text-gray-400"
+              className="w-5 h-5 text-gray-400 "
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -41,7 +41,7 @@ const Homepage = () => {
           <input
             type="search"
             id="default-search"
-            className="block w-full p-4 pl-10 text-sm text-white border rounded-lg bg-slate-800 border-gray-600 placeholder-gray-400"
+            className="block w-full p-4 pl-10 text-sm text-white border rounded-full bg-slate-800 border-gray-600 placeholder-gray-400"
             placeholder="Search for a Pokémon..."
             required
             value={query}
